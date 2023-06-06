@@ -20,8 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bird.cpp" />
+    <ClCompile Include="bird\bird.cpp" />
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="bullet\bullet-interface.cpp" />
+    <ClCompile Include="bullet\bullet-logic.cpp" />
+    <ClCompile Include="bullet\bullet-storage.cpp" />
+    <ClCompile Include="bullet\bullet.cpp" />
     <ClCompile Include="effect.cpp" />
+    <ClCompile Include="effect\effect-interface.cpp" />
+    <ClCompile Include="effect\effect-logic.cpp" />
+    <ClCompile Include="effect\effect.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gun.cpp" />
     <ClCompile Include="point.cpp" />
@@ -31,9 +39,18 @@
     <ClCompile Include="uiInteract.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bird\bird.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="bird.h" />
+    <ClInclude Include="bullet\bullet-interface.h" />
+    <ClInclude Include="bullet\bullet-logic.h" />
+    <ClInclude Include="bullet\bullet-storage.h" />
+    <ClInclude Include="bullet\bullet.h" />
     <ClInclude Include="effect.h" />
+    <ClInclude Include="effect\effect-interface.h" />
+    <ClInclude Include="effect\effect-logic.h" />
+    <ClInclude Include="effect\effect-storage.h" />
+    <ClInclude Include="effect\effect.h" />
     <ClInclude Include="gun.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="score.h" />
