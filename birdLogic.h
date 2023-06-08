@@ -10,7 +10,7 @@ using namespace std;
 class BirdBaseLogic
 {
 public:
-    list<BirdStorage> factory(int level, int count);
+    static list<BirdStorage> factory(int level, int count);
     void kill(BirdStorage &bird) { bird.setDead(true); };
     bool isOutOfBounds(BirdStorage bird);
 
