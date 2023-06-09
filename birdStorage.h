@@ -1,11 +1,12 @@
 #pragma once
 
+#include "object.h"
 #include "point.h"
-#include "typeEnum.h"
+#include "object-type.h"
 
 // TODO: uncomment the inheritance 
 
-class BirdStorage //: public CollideableObject
+class BirdStorage : public CollidableObject
 {
 public:
 	Point getPosition() { return pt; }

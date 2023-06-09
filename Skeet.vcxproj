@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bird.cpp" />
+    <ClCompile Include="birdLogic.cpp" />
     <ClCompile Include="bullet-interface.cpp" />
     <ClCompile Include="bullet-logic.cpp" />
     <ClCompile Include="bullet-storage.cpp" />
@@ -29,6 +30,8 @@
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gun.cpp" />
+    <ClCompile Include="overall-interface.cpp" />
+    <ClCompile Include="overall-logic.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="skeet.cpp" />
@@ -36,6 +39,9 @@
     <ClCompile Include="uiInteract.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="birdInterface.h" />
+    <ClInclude Include="birdLogic.h" />
+    <ClInclude Include="birdStorage.h" />
     <ClInclude Include="bullet-interface.h" />
     <ClInclude Include="bullet-logic.h" />
     <ClInclude Include="bullet-storage.h" />
@@ -45,7 +51,15 @@
     <ClInclude Include="effect-logic.h" />
     <ClInclude Include="effect-storage.h" />
     <ClInclude Include="effect.h" />
+    <ClInclude Include="gun-interface.h" />
+    <ClInclude Include="gun-logic.h" />
+    <ClInclude Include="gun-storage.h" />
     <ClInclude Include="gun.h" />
+    <ClInclude Include="object-type.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="overall-interface.h" />
+    <ClInclude Include="overall-logic.h" />
+    <ClInclude Include="overall-storage.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="score.h" />
     <ClInclude Include="skeet.h" />

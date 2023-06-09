@@ -1,10 +1,13 @@
 #pragma once
+
+#include "object.h"
 #include "point.h"
 #include "effect.h"
 #include <list>
 #include <cassert>
 
-class BulletBaseStorage {
+class BulletStorage : public CollidableObject
+{
 protected:
    static Point dimensions;   // size of the screen
    Point pt;                  // position of the bullet
@@ -14,7 +17,7 @@ protected:
    int value;                 // how many points does this cost?
 
 public:
-   Bullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
+   BulletStorage(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
 
    // setters
    void kill() { dead = true; }
@@ -29,4 +32,4 @@ public:
 protected:
    int    random(int    min, int    max);
    double random(double min, double max);
-}
+};

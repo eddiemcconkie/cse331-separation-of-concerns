@@ -9,12 +9,13 @@
  ************************************************************************/
 
 #pragma once
+#include "object.h"
 #include "point.h"
 
  /**********************
   * Effect: stuff that is not interactive
   **********************/
-class EffectStorage
+class EffectStorage : DrawableObject
 {
 protected:
    Point pt;      // location of the effect
