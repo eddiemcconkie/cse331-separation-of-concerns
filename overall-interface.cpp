@@ -26,7 +26,19 @@ DrawableObjectInterface* OverallInterface::getObjectInterface(DrawableObject* st
 		return &streekInterface;
 	case EFFECT_EXHAUST:
 		return &exhaustInterface;
+	case GUN:
+		return &gunInterface;
 	default:
 		return nullptr;
+	}
+}
+
+void OverallInterface::draw()
+{
+	auto drawableObjects = logic.getDrawableObjects();
+	for (auto& object : drawableObjects)
+	{
+		auto interface = getObjectInterface(object);
+		interface->draw(object);
 	}
 }

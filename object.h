@@ -18,7 +18,8 @@ private:
 
 class DrawableObjectInterface
 {
-   virtual void draw() = 0;
+public:
+   virtual void draw(DrawableObject* storage) = 0;
 };
 
 class CollidableObject : public DrawableObject

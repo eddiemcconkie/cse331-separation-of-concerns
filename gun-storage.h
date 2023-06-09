@@ -2,4 +2,4 @@
 
 #include "object.h"
 
-class GunStorage : DrawableObject {};
+class GunStorage : public DrawableObject {};

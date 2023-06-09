@@ -16,13 +16,13 @@ public:
    void remove(BirdStorage* bird);
    void remove(BulletStorage* bird);
    void remove(EffectStorage* bird);
-   std::list<BirdStorage*> getBirds();
-   std::list<BulletStorage*> getBullets();
-   std::list<EffectStorage*> getEffects();
-   GunStorage* getGun();
-   ScoreStorage* getScore();
-   HitRatioStorage* getHitRatio();
-   Point* getDimensions();
+   std::list<BirdStorage*> getBirds() { return birds; }
+   std::list<BulletStorage*> getBullets() { return bullets; }
+   std::list<EffectStorage*> getEffects() { return effects; }
+   GunStorage* getGun() { return &gun; }
+   ScoreStorage* getScore() { return &score; }
+   HitRatioStorage* getHitRatio() { return &hitRatio; }
+   const Point* getDimensions() { return &dimensions; }
 
 private:
    std::list<BirdStorage*> birds;

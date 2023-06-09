@@ -1,3 +1,8 @@
 #pragma once
 
-class GunInterface{};
+#include "object.h"
+
+class GunInterface : public DrawableObjectInterface{
+public:
+   void draw();
+};

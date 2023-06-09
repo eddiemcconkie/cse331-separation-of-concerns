@@ -1,5 +1,7 @@
 #include "overall-logic.h"
 
+using namespace std;
+
 BirdBaseLogic* OverallLogic::getObjectLogic(BirdStorage* storage)
 {
 	switch (storage->getType())
@@ -44,5 +46,75 @@ EffectBaseLogic* OverallLogic::getObjectLogic(EffectStorage* storage)
 		return &exhaustLogic;
 	default:
 		return nullptr;
+	}
+}
+
+list<DrawableObject*> OverallLogic::getDrawableObjects()
+{
+	auto birds = storage.getBirds();
+	auto bullets = storage.getBullets();
+	auto effects = storage.getEffects();
+	auto gun = storage.getGun();
+	list<DrawableObject*> drawableObjects;
+	drawableObjects.insert(drawableObjects.end(), birds.begin(), birds.end());
+	drawableObjects.insert(drawableObjects.end(), bullets.begin(), bullets.end());
+	drawableObjects.insert(drawableObjects.end(), effects.begin(), effects.end());
+	drawableObjects.push_back(gun);
+}
+
+void OverallLogic::move()
+{
+	auto birds = storage.getBirds();
+	auto bullets = storage.getBullets();
+	auto effects = storage.getEffects();
+
+	for (auto& bird : birds)
+	{
+		auto logic = getObjectLogic(bird);
+		logic->advance(bird);
+		if (logic->isOutOfBounds(bird))
+			logic->kill(bird);
+	}
+	for (auto& bullet : bullets)
+	{
+		auto logic = getObjectLogic(bullet);
+		logic->move(bullet);
+		if (logic->isOutOfBounds(bullet))
+			logic->kill(bullet);
+	}
+	for (auto& effect : effects)
+	{
+		auto logic = getObjectLogic(effect);
+		logic->fly(effect);
+		//if (logic->isOutOfBounds(effect))
+			//logic->kill(effect);
+	}
+}
+
+void OverallLogic::collide()
+{
+	auto birds = storage.getBirds();
+	auto bullets = storage.getBullets();
+
+	for (auto& bird : birds)
+	{
+		auto birdLogic = getObjectLogic(bird);
+
+		for (auto& bullet : bullets)
+		{
+			auto bulletLogic = getObjectLogic(bullet);
+
+			auto birdPt = bird->getPt();
+			auto bulletPt = bullet->getPt();
+			auto diffX = birdPt.getX() - bulletPt.getX();
+			auto diffY = birdPt.getY() - bulletPt.getY();
+
+			auto distance = sqrt((diffX * diffX) + (diffY * diffY));
+			if (distance <= bird->getRadius() + bullet->getRadius())
+			{
+				birdLogic->kill(bird);
+				bulletLogic->kill(bullet);
+			}
+		}
 	}
 }

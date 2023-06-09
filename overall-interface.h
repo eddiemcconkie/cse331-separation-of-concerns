@@ -1,6 +1,6 @@
 #pragma once
 
-#include "overall-storage.h"
+#include "overall-logic.h"
 #include "birdInterface.h"
 #include "bullet-interface.h"
 #include "effect-interface.h"
@@ -10,9 +10,12 @@ class OverallInterface
 {
 public:
    DrawableObjectInterface* getObjectInterface(DrawableObject* storage);
+   void tick();
 
 private:
-   OverallStorage storage;
+   void draw();
+
+   OverallLogic logic;
    // Bird interface
    BirdStandardInterface birdStandardInterface;
    BirdFloaterInterface birdFloaterInterface;

@@ -3,8 +3,9 @@
 
 class EffectBaseLogic
 {
+public:
    // move it forward with regards to inertia. Let it age
-   virtual void fly() = 0;
+   virtual void fly(EffectStorage* effect) = 0;
 };
 
 /**********************

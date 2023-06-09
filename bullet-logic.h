@@ -5,22 +5,24 @@
 #include <cassert>
 
 
-class BulletLogic{
+class BulletLogic
+{
 
 public:
-   virtual void death(std::list<Bullet *> & bullets) {}
+   virtual void death(std::list<Bullet*>& bullets) {}
    virtual void input(bool isUp, bool isDown, bool isB) {}
-   virtual void move(std::list<Effect*> &effects);
-   void kill()                   { dead = true; }
+   //virtual void move(std::list<Effect*>& effects);
+   virtual void move(BulletStorage* bullet);
+   void kill(BulletStorage* bullet) { bullet->setDead(true); }
 
-protected:
-   bool isOutOfBounds() const
+   bool isOutOfBounds(BulletStorage* bullet) const
    {
-      return (pt.getX() < -radius || pt.getX() >= dimensions.getX() + radius ||
-         pt.getY() < -radius || pt.getY() >= dimensions.getY() + radius);
+      //return (pt.getX() < -radius || pt.getX() >= dimensions.getX() + radius ||
+         //pt.getY() < -radius || pt.getY() >= dimensions.getY() + radius);
    }
 
-}
+protected:
+};
 
 
 /*********************
@@ -32,7 +34,7 @@ class BombLogic : public BulletLogic
 private:
    int timeToDie;
 public:
-   Bomb(double angle, double speed = 10.0) : Bullet(angle, speed, 4.0, 4), timeToDie(60) {} //?
+   BombLogic(double angle, double speed = 10.0) : Bullet(angle, speed, 4.0, 4), timeToDie(60) {} //?
    
    void move(std::list<Effect*> & effects);
    void death(std::list<Bullet *> & bullets);
