@@ -1,44 +1,48 @@
 #include "overall-logic.h"
 
-BirdBaseLogic* OverallLogic::getObjectLogic(BirdType type)
+BirdBaseLogic* OverallLogic::getObjectLogic(BirdStorage* storage)
 {
-	switch (type)
+	switch (storage->getType())
 	{
-	case STANDARD:
+	case BIRD_STANDARD:
 		return &birdStandardLogic;
-	case FLOATER:
+	case BIRD_FLOATER:
 		return &birdFloaterLogic;
-	case SINKER:
+	case BIRD_SINKER:
 		return &birdSinkerLogic;
-	case CRAZY:
+	case BIRD_CRAZY:
 		return &birdCrazyLogic;
 	}
 }
 
-BulletLogic* OverallLogic::getObjectLogic(BulletType type)
+BulletLogic* OverallLogic::getObjectLogic(BulletStorage* storage)
 {
-	switch (type)
+	switch (storage->getType())
 	{
-	case PELLET:
+	case BULLET_PELLET:
 		return &bulletLogic;
-	case BOMB:
+	case BULLET_BOMB:
 		return &bombLogic;
-	case MISSILE:
+	case BULLET_MISSILE:
 		return &missileLogic;
-	case SHRAPNEL:
+	case BULLET_SHRAPNEL:
 		return &shrapnelLogic;
+	default:
+		return nullptr;
 	}
 }
 
-EffectBaseLogic* OverallLogic::getObjectLogic(EffectType type)
+EffectBaseLogic* OverallLogic::getObjectLogic(EffectStorage* storage)
 {
-	switch (type)
+	switch (storage->getType())
 	{
-	case FRAGMENT:
+	case EFFECT_FRAGMENT:
 		return &fragmentLogic;
-	case STREEK:
+	case EFFECT_STREEK:
 		return &streekLogic;
-	case EXHAUST:
+	case EFFECT_EXHAUST:
 		return &exhaustLogic;
+	default:
+		return nullptr;
 	}
 }

@@ -1,40 +1,40 @@
 #pragma once
 
-//enum ObjectType
+enum ObjectType
+{
+   BIRD_STANDARD,
+   BIRD_FLOATER,
+   BIRD_SINKER,
+   BIRD_CRAZY,
+   BULLET_PELLET,
+   BULLET_BOMB,
+   BULLET_MISSILE,
+   BULLET_SHRAPNEL,
+   EFFECT_FRAGMENT,
+   EFFECT_STREEK,
+   EFFECT_EXHAUST,
+   GUN
+};
+
+//enum BirdType
 //{
-//   BIRD_STANDARD,
-//   BIRD_FLOATER,
-//   BIRD_SINKER,
-//   BIRD_CRAZY,
-//   BULLET,
+//   STANDARD,
+//   FLOATER,
+//   SINKER,
+//   CRAZY
+//};
+//
+//enum BulletType
+//{
+//   PELLET,
 //   BOMB,
 //   MISSILE,
-//   SHRAPNEL,
+//   SHRAPNEL
+//};
+//
+//enum EffectType
+//{
 //   FRAGMENT,
 //   STREEK,
-//   EXHAUST,
-//   GUN
+//   EXHAUST
 //};
-
-enum BirdType
-{
-   STANDARD,
-   FLOATER,
-   SINKER,
-   CRAZY
-};
-
-enum BulletType
-{
-   PELLET,
-   BOMB,
-   MISSILE,
-   SHRAPNEL
-};
-
-enum EffectType
-{
-   FRAGMENT,
-   STREEK,
-   EXHAUST
-};

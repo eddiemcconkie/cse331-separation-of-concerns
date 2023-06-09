@@ -2,7 +2,8 @@
 
 
 
-class EffectInterface {
+class EffectInterface : public DrawableObjectInterface
+{
 public:
    virtual void render() const = 0;
 

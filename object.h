@@ -16,6 +16,11 @@ private:
    static Point dimensions;
 };
 
+class DrawableObjectInterface
+{
+   virtual void draw() = 0;
+};
+
 class CollidableObject : public DrawableObject
 {
 public:

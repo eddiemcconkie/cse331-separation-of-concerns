@@ -1,44 +1,32 @@
 #include "overall-interface.h"
 
-BirdBaseInterface* OverallInterface::getObjectInterface(BirdType type)
+DrawableObjectInterface* OverallInterface::getObjectInterface(DrawableObject* storage)
 {
-	switch (type)
+	switch (storage->getType())
 	{
-	case STANDARD:
+	case BIRD_STANDARD:
 		return &birdStandardInterface;
-	case FLOATER:
+	case BIRD_FLOATER:
 		return &birdFloaterInterface;
-	case SINKER:
+	case BIRD_SINKER:
 		return &birdSinkerInterface;
-	case CRAZY:
+	case BIRD_CRAZY:
 		return &birdCrazyInterface;
-	}
-}
-
-BulletBaseInterface* OverallInterface::getObjectInterface(BulletType type)
-{
-	switch (type)
-	{
-	case PELLET:
+	case BULLET_PELLET:
 		return &bulletInterface;
-	case BOMB:
+	case BULLET_BOMB:
 		return &bombInterface;
-	case MISSILE:
+	case BULLET_MISSILE:
 		return &missileInterface;
-	case SHRAPNEL:
+	case BULLET_SHRAPNEL:
 		return &shrapnelInterface;
-	}
-}
-
-EffectInterface* OverallInterface::getObjectInterface(EffectType type)
-{
-	switch (type)
-	{
-	case FRAGMENT:
+	case EFFECT_FRAGMENT:
 		return &fragmentInterface;
-	case STREEK:
+	case EFFECT_STREEK:
 		return &streekInterface;
-	case EXHAUST:
+	case EFFECT_EXHAUST:
 		return &exhaustInterface;
+	default:
+		return nullptr;
 	}
 }

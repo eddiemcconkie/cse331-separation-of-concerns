@@ -4,8 +4,6 @@
 #include "point.h"
 #include "object-type.h"
 
-// TODO: uncomment the inheritance 
-
 class BirdStorage : public CollidableObject
 {
 public:

@@ -16,7 +16,7 @@
   * BULLET
   * Something to shoot something else
   *********************************************/
-class BulletBaseInterface
+class BulletBaseInterface : public DrawableObjectInterface
 {
 public:
    virtual void output() = 0;

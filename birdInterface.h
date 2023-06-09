@@ -13,10 +13,10 @@
 #define GLUT_TEXT GLUT_BITMAP_HELVETICA_12
 #endif // _WIN32
 
-class BirdBaseInterface
+class BirdBaseInterface : public DrawableObjectInterface
 {
 public:
-	virtual void draw(BirdStorage birdStorage) = 0;
+	virtual void draw(const DrawableObject& birdStorage) = 0;
 
 protected:
     /************************************************************************
@@ -62,7 +62,7 @@ protected:
 
 class BirdStandardInterface : public BirdBaseInterface {
 public:
-	void draw(BirdStorage birdStorage) {
+	void draw(const DrawableObject& birdStorage) {
         /*********************************************
      * STANDARD DRAW
      * Draw a standard bird: blue center and white outline
@@ -74,7 +74,7 @@ public:
 
 class BirdFloaterInterface : public BirdBaseInterface {
 public:
-    void draw(BirdStorage birdStorage) {
+    void draw(const DrawableObject& birdStorage) {
         /*********************************************
      * STANDARD DRAW
      * Draw a standard bird: blue center and white outline
@@ -86,7 +86,7 @@ public:
 
 class BirdSinkerInterface : public BirdBaseInterface {
 public:
-    void draw(BirdStorage birdStorage) {
+    void draw(const DrawableObject& birdStorage) {
         /*********************************************
      * STANDARD DRAW
      * Draw a standard bird: blue center and white outline
@@ -98,7 +98,7 @@ public:
 
 class BirdCrazyInterface : public BirdBaseInterface {
 public:
-    void draw(BirdStorage birdStorage) {
+    void draw(const DrawableObject& birdStorage) {
         /*********************************************
      * STANDARD DRAW
      * Draw a standard bird: blue center and white outline

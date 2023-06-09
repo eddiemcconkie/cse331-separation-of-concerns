@@ -9,9 +9,9 @@
 class OverallLogic
 {
 public:
-   BirdBaseLogic* getObjectLogic(BirdType type);
-   BulletLogic* getObjectLogic(BulletType type);
-   EffectBaseLogic* getObjectLogic(EffectType type);
+   BirdBaseLogic* getObjectLogic(BirdStorage* storage);
+   BulletLogic* getObjectLogic(BulletStorage* storage);
+   EffectBaseLogic* getObjectLogic(EffectStorage* storage);
 
 private:
    OverallStorage storage;

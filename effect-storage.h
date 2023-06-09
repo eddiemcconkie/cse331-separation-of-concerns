@@ -15,7 +15,7 @@
  /**********************
   * Effect: stuff that is not interactive
   **********************/
-class EffectStorage : DrawableObject
+class EffectStorage : public DrawableObject
 {
 protected:
    Point pt;      // location of the effect

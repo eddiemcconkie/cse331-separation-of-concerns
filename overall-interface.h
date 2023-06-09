@@ -9,10 +9,7 @@
 class OverallInterface
 {
 public:
-
-   BirdBaseInterface* getObjectInterface(BirdType type);
-   BulletBaseInterface* getObjectInterface(BulletType type);
-   EffectInterface* getObjectInterface(EffectType type);
+   DrawableObjectInterface* getObjectInterface(DrawableObject* storage);
 
 private:
    OverallStorage storage;
