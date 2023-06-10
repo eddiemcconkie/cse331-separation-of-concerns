@@ -34,7 +34,7 @@ BirdStorage makeStandard(int level, BirdStorage bird) {
     int points = 0;
     
     //automatic settings for standard bird regardless of game level
-    ObjectType type = ObjectType::STANDARD;
+    ObjectType type = ObjectType::BIRD_STANDARD;
     pt.setY(randomFloat(dimensions.getY() * 0.25, dimensions.getY() * 0.75));
     pt.setX(0.0);
 
@@ -91,7 +91,7 @@ BirdStorage makeFloater(int level, BirdStorage bird) {
     int points = 0;         
 
     //automatic settings for floater bird regardless of game level
-    ObjectType type = ObjectType::FLOATER;
+    ObjectType type = ObjectType::BIRD_FLOATER;
     pt.setY(randomFloat(dimensions.getY() * 0.01, dimensions.getY() * 0.5));
     pt.setX(0.0);
 
@@ -135,7 +135,7 @@ BirdStorage makeSinker(int level, BirdStorage bird) {
     int points = 0;         //20    22  25
 
     //automatic settings for sinker bird regardless of game level
-    ObjectType type = ObjectType::SINKER;
+    ObjectType type = ObjectType::BIRD_SINKER;
     pt.setY(randomFloat(dimensions.getY() * 0.50, dimensions.getY() * 0.95));
     pt.setX(0.0);
 
@@ -182,7 +182,7 @@ BirdStorage makeCrazy(int level, BirdStorage bird) {
     Velocity v = Velocity();
 
     //automatic settings for crazy bird regardless of game level
-    ObjectType type = ObjectType::CRAZY;
+    ObjectType type = ObjectType::BIRD_CRAZY;
     double speed = 4.5;
     double radius = 15.0;
     int points = 30;
