@@ -262,7 +262,7 @@ list<BirdStorage> BirdBaseLogic::factory(int level, int count)
 
         // spawn every 4 seconds
         if (random(0, 4 * 30) == 1) {
-            bird = makeFloater(level, bird);
+            bird = makeCrazy(level, bird);
             birds.push_back(bird);
         }
 
